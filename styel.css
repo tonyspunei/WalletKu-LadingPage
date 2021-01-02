@@ -15,6 +15,53 @@ nav {
   justify-content: space-between;
 }
 
+/* Hamburger Design */
+.hamburger {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  display: none;
+}
+
+/* Toggle */
+.toggle {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+}
+.hamburgerIcon {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.linksHamburger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #40406191;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0);
+}
+
+.linksHamburger > a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #dfe9f3;
+  margin: 1.5rem 0;
+  font-weight: 800;
+  transition: all 0.4s ease;
+}
+
 /* Logo Design */
 .logo {
   height: 100%;
@@ -35,6 +82,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 5;
+  position: relative;
 }
 
 .links > a {
@@ -103,7 +152,7 @@ nav {
 
 .btn {
   height: 100%;
-  width: 45%;
+  width: 48%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,6 +160,7 @@ nav {
   font-weight: 500;
   cursor: pointer;
   color: #7b899a;
+  flex-wrap: wrap;
 }
 
 .btn > p {
@@ -118,11 +168,7 @@ nav {
 }
 
 .appStore {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 184, 143, 0.9) 0%,
-    #ff9152 99.99%
-  );
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   border-radius: 5px;
   color: #ffffff;
   font-size: 1.2rem;
@@ -140,15 +186,15 @@ nav {
   height: 100%;
   width: 70%;
   z-index: -1;
-  position: relative;
+
   top: -5rem;
   right: -5rem;
   overflow: hidden;
 }
 
 .blueBackground {
-  height: 110%;
-  width: 110%;
+  height: 80%;
+  width: 50%;
   position: absolute;
   top: 0rem;
   right: 0rem;
@@ -156,8 +202,204 @@ nav {
 
 .phoneImage {
   position: absolute;
-  bottom: -2rem;
-  right: 0rem;
-  height: 90%;
+  bottom: 0%;
+  right: 8%;
+  height: 85%;
   width: auto;
+}
+
+.active {
+  display: flex;
+  transition: all 0.4s ease;
+  transform: scale(1);
+}
+
+@media (max-width: 1310px) {
+  .buttons {
+    width: 90%;
+    text-align: center;
+  }
+}
+@media (max-width: 1160px) {
+  .blueBackground {
+    width: 60%;
+  }
+  .links {
+    width: 55%;
+  }
+}
+@media (max-width: 920px) {
+  .phoneImage {
+    height: 60%;
+    bottom: 20%;
+  }
+  .blueBackground {
+    height: 70%;
+  }
+  .textLeft > h1 {
+    font-size: 3rem;
+  }
+  .textLeft > p {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .icon {
+    height: 20px;
+    margin: 0 0.2rem;
+  }
+}
+
+@media (max-width: 790px) {
+  .hamburger {
+    display: flex;
+  }
+  .links {
+    display: none;
+  }
+  .phoneImage {
+    z-index: -1;
+    height: 50%;
+    bottom: 30%;
+  }
+  .hero {
+    margin: 0;
+  }
+  nav {
+    margin: 0;
+  }
+  .logo {
+    margin: 0 2rem;
+  }
+  .textLeft {
+    margin: 0 2rem;
+  }
+  .buttons {
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+  }
+  .textLeft > h1 {
+    font-size: 2.6rem;
+  }
+  .textLeft > p {
+    font-size: 0.8rem;
+  }
+  .textLeft {
+    width: 60%;
+  }
+  .hero {
+    width: 100%;
+  }
+  .textLeft {
+    padding-bottom: 3rem;
+  }
+
+  .blueBackground {
+    height: 60%;
+  }
+}
+
+@media (max-width: 630px) {
+  .buttons {
+    flex-direction: column;
+    height: 7rem;
+    width: 80%;
+  }
+  .btn {
+    width: 100%;
+  }
+  .textLeft > p {
+    font-size: 1rem;
+  }
+  .textLeft > h1 {
+    font-size: 2rem;
+  }
+  .phoneImage {
+    height: 50%;
+    bottom: 30%;
+  }
+  .blueBackground {
+    height: 50%;
+  }
+  .hamburgerIcon {
+    height: 60px;
+    width: auto;
+  }
+  .toggle {
+    right: 0rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .phoneImage {
+    height: 40%;
+    bottom: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo > h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 430px) {
+  .phoneImage {
+    height: 30%;
+    bottom: 50%;
+  }
+  .blueBackground {
+    height: 40%;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .textLeft {
+    padding-top: 15rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .phoneImage {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo > h1 {
+    font-size: 1.5rem;
+  }
+  .hamburgerIcon {
+    height: 50px;
+  }
+  .textLeft {
+    padding-top: 16rem;
+  }
+}
+@media (max-width: 320px) {
+  .logo > h1 {
+    font-size: 1.3rem;
+  }
+  .blueBackground {
+    height: 30%;
+  }
+  .textLeft {
+    padding-top: 15rem;
+  }
+}
+@media (max-width: 320px) {
+  .logo > h1 {
+    font-size: 1.3rem;
+  }
+  .logo {
+    width: 40%;
+    margin: 0 1rem;
+  }
+
+  .blueBackground {
+    height: 20%;
+  }
+  .textLeft {
+    padding-top: 5rem;
+  }
 }
